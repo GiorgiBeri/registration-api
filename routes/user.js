@@ -39,17 +39,13 @@ router.post('/register', async(req, res) => {
     }
 });
 
-
 router.get('/login', async(req, res, next) => {
     res.sendFile('login.html', { root: 'public' });
 });
 
 router.post('/login', async(req, res, next) => {
-
     const { loginPassword, loginEmail } = req.body;
-
     const user = await User.findOne({ email: loginEmail })
-        .then(e => console.log(e))
 
 });
 
